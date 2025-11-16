@@ -1,0 +1,6 @@
+MenuID,MenuName,Cuisine,Price,MenuItemsID
+1,"Ocean Breeze",Seafood,220.00,1
+2,"Garden Fresh",Vegan,95.00,2
+3,Firecracker,"Asian Fusion",150.00,3
+4,"Hearty Comfort",Western,180.00,4
+5,"Sunny Isles",Mediterranean,205.00,5

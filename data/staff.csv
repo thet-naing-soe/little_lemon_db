@@ -1,0 +1,6 @@
+StaffID,FullName,Role,Salary,PhoneNumber
+1,"Nay Lin",Manager,2600.00,0991112222
+2,"Su Su","Head Chef",2400.00,0975556666
+3,"Myint Aye",Server,1200.00,0967778888
+4,"Wai Yan",Bartender,1300.00,0953334444
+5,"Ei Mon","Sous Chef",1800.00,0944445555
