@@ -1,6 +1,11 @@
-CustomerID,FullName,PhoneNumber,Email
-1,"Aung Min",0912345678,aung.min@example.com
-2,"Thiri Hlaing",0987654321,thiri.h@example.com
-3,"Ko Ko",0971112233,koko@example.com
-4,"May Thin",0945678901,may.thin@example.com
-5,"Hnin Ei",0922233344,hninei@example.com
+CustomerID,FullName,PhoneNumber,Email,City,Country,PostalCode
+1,"John Smith",555-0101,john.smith@email.com,"New York","United States",10001
+2,"Maria Garcia",555-0102,maria.g@email.com,"Los Angeles","United States",90001
+3,"James Johnson",555-0103,james.j@email.com,Chicago,"United States",60601
+4,"Emily Davis",555-0104,emily.d@email.com,Houston,"United States",77001
+5,"Michael Brown",555-0105,michael.b@email.com,Phoenix,"United States",85001
+6,"Sarah Wilson",555-0106,sarah.w@email.com,Miami,"United States",33101
+7,"David Martinez",555-0107,david.m@email.com,Seattle,"United States",98101
+8,"Lisa Anderson",555-0108,lisa.a@email.com,Boston,"United States",02101
+9,"Robert Taylor",555-0109,robert.t@email.com,Denver,"United States",80201
+10,"Jennifer Lee",555-0110,jennifer.l@email.com,Atlanta,"United States",30301
