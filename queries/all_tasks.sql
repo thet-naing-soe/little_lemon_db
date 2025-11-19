@@ -287,6 +287,62 @@ BEGIN
 END //
 DELIMITER ;
 
+-- 11: ManageBooking Procedure
 
+DELIMITER //
+
+CREATE PROCEDURE ManageBooking(
+    IN p_action VARCHAR(10),
+    IN p_booking_id INT,
+    IN p_booking_date DATE,
+    IN p_table_number INT,
+    IN p_customer_id INT
+)
+BEGIN
+    DECLARE v_message VARCHAR(255);
+    
+    IF p_action = 'ADD' THEN
+        INSERT INTO Bookings (BookingDate, TableNumber, CustomerID)
+        VALUES (p_booking_date, p_table_number, p_customer_id);
+        
+        SET v_message = CONCAT('Booking added successfully! BookingID: ', LAST_INSERT_ID());
+        SELECT v_message AS Result;
+    
+    ELSEIF p_action = 'UPDATE' THEN
+        UPDATE Bookings
+        SET BookingDate = p_booking_date,
+            TableNumber = p_table_number,
+            CustomerID = p_customer_id
+        WHERE BookingID = p_booking_id;
+        
+        IF ROW_COUNT() > 0 THEN
+            SET v_message = CONCAT('Booking updated successfully! BookingID: ', p_booking_id);
+        ELSE
+            SET v_message = CONCAT('Booking not found with ID: ', p_booking_id);
+        END IF;
+        SELECT v_message AS Result;
+
+    ELSEIF p_action = 'CANCEL' THEN
+        DELETE FROM Bookings WHERE BookingID = p_booking_id;
+        
+        IF ROW_COUNT() > 0 THEN
+            SET v_message = CONCAT('Booking cancelled successfully! BookingID: ', p_booking_id);
+        ELSE
+            SET v_message = CONCAT('Booking not found with ID: ', p_booking_id);
+        END IF;
+        SELECT v_message AS Result;
+    
+    ELSEIF p_action = 'VIEW' THEN
+        SELECT BookingID, BookingDate, TableNumber, CustomerID
+        FROM Bookings
+        ORDER BY BookingDate DESC;
+    
+    ELSE
+        SELECT 'Invalid action. Use: ADD, UPDATE, CANCEL, or VIEW' AS Result;
+    END IF;
+    
+END //
+
+DELIMITER ;
 
 
